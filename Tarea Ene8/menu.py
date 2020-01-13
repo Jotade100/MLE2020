@@ -18,6 +18,12 @@ def generarMenu(dic):
         print("Opción no válida")
     else:
         resultado = dic.get(enumeracion[seleccion][1])
-        print("Resultado: {}".format(resultado(int(input("Introduzca el primer operando: ")), int(input("Introduzca el segundo operando: ")))))
+        print("Resultado: {}".format(
+            resultado(
+                int(input("Introduzca el primer operando: ")),
+                int(input("Introduzca el segundo operando: "))
+                )
+            )
+        )
 
 generarMenu(diccionarioOp)
