@@ -11,11 +11,9 @@ def calcularCaminoAdyLargo(triangulo):
     adyacentes que suma más. [Algoritmo propuesto por Ing. Samuel Chávez]
     Su complejidad es de O(lado^2).
     Su complejidad de almacenaje es el área del triángulo"""
-    cola = len(triangulo) - 1
-    while cola != 0:
-        cola -= 1
-        for w in range(0, cola + 1):
-            triangulo[cola][w] += max(triangulo[cola + 1][w: w + 2])
+    for y in range(len(triangulo) - 2, -1, -1):
+        for x in range(0, y + 1):
+            triangulo[y][x] += max(triangulo[y + 1][x: x + 2])
     return triangulo[0][0]
 
 
