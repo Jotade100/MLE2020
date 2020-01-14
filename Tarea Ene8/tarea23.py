@@ -15,10 +15,7 @@ def calcularCaminoAdyLargo(triangulo):
     while cola != 0:
         cola -= 1
         for w in range(0, cola + 1):
-            if triangulo[cola + 1][w] > triangulo[cola + 1][w + 1]:
-                triangulo[cola][w] += triangulo[cola + 1][w]
-            else:
-                triangulo[cola][w] += triangulo[cola + 1][w + 1]
+            triangulo[cola][w] += max(triangulo[cola + 1][w: w + 2])
     return triangulo[0][0]
 
 
