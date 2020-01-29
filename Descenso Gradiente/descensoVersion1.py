@@ -6,7 +6,7 @@ def derivada_teta_1(tetas, x, y, param):
     """Realiza la derivada de la función de costo
         para cualquier parámetro teta
     """
-    return (((np.dot(tetas, x) - y) * x[param]).sum()) / (len(x))
+    return (np.sum(((np.dot(tetas, x) - y) * x[param]))) / (len(x))
 
 
 def gen_data(n, bias, varianza):
@@ -30,7 +30,6 @@ x = [[1 for i in range(len(x))], x]  # relleno la primera fila con 1 para el int
 tetas = np.array(tetas)
 x = np.array(x, dtype=np.float64)
 y = np.array(y)
-print(x, y)
 # variables de flujo del gradiente
 razon_de_aprendizaje = 0.001
 teta_gradiente = tetas.copy()
